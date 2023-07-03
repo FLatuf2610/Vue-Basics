@@ -66,8 +66,8 @@ const app = Vue.createApp({
         },
 
         surrender(){
-            this.surrrendered = !this.surrrendered
-            this.playing = !this.playing
+            this.surrrendered = !this.surrendered
+            this.playing = false
         },
 
         playAgain(){
@@ -99,15 +99,13 @@ const app = Vue.createApp({
     watch: {
         phealth(value){
             if (value <= 0){
-                if(this.playing == false ){this.playing = this.playing}
-                else{this.playing = !this.playing}
+                this.playing = false
             }
         },
 
         mhealth(value){
             if (value <= 0){
-                if(this.playing == false ){this.playing = this.playing}
-                else{this.playing = !this.playing}
+                this.playing = false
             }
         }
     },
