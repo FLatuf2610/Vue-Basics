@@ -99,13 +99,15 @@ const app = Vue.createApp({
     watch: {
         phealth(value){
             if (value <= 0){
-                this.playing = !this.playing
+                if(this.playing == false ){this.playing = this.playing}
+                else{this.playing = !this.playing}
             }
         },
 
         mhealth(value){
             if (value <= 0){
-                this.playing = !this.playing
+                if(this.playing == false ){this.playing = this.playing}
+                else{this.playing = !this.playing}
             }
         }
     },
